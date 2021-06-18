@@ -32,7 +32,7 @@ this.formGroup = this.fb.group({
        categoryId: 0,
         language:[ null, Validators.required ] ,
         price: [ 0, Validators.required ] ,
-        discount: 0,
+        discount:[0, [Validators.min(0),Validators.max(100)]],
         rating : 0 ,
         isOriginalityCertificateIncluded: false,
        

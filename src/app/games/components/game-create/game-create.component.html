@@ -62,7 +62,7 @@
       <div class="checkbox">
         <label><input type="checkbox"> Authentication Certificate</label>
       </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <button type="submit" class="btn btn-primary" [disabled]="formGroup.invalid">Submit</button>
   </form>
 </div>
 
