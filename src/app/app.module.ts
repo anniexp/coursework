@@ -6,16 +6,10 @@ import { AppComponent } from './app.component';
 import { GamesServise } from './games/services/games.services';
 import { HttpClientModule } from '@angular/common/http';
 import { GamesListComponent } from './games/components/games-list/games-list.component';
-import { Routes } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 import { GamesModule } from './games/games.module';
 
 
-const routes: Routes = [
-  {
-    path: 'games',
-    component : GamesListComponent
-  }
-]
 
 @NgModule({
   declarations: [
@@ -26,7 +20,8 @@ const routes: Routes = [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    GamesModule,
+   // GamesModule,
+  
    
   ],
   providers: [GamesServise],

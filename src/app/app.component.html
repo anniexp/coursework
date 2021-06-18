@@ -1,11 +1,28 @@
 
 
+<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+  <a class="navbar-brand" routerLink="/">Table Games</a>
 
+  <div class="collapse navbar-collapse">
+    <ul class="navbar-nav mr-auto">
+      <li class="text-nav-bar" routerLinkActive="active">
+        <a class="nav-link" routerLink="dashboard">Dashboard</a>
+      </li>
+      <li class="nav-item" routerLinkActive="active">
+        <a class="nav-link" routerLink="games">Games</a>
+      </li>
+      <li class="nav-item" routerLinkActive="active">
+        <a class="nav-link" routerLink="categories">Categories of games</a>
+      </li>
+      
+    </ul>
+  </div>
+</nav>
 <main role="main" class="container-fluid">
 
   <div>
+    
     <router-outlet></router-outlet>
-   
   </div>
-  <lq-games-list></lq-games-list>
+ 
 </main>
