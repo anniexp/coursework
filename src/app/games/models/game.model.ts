@@ -15,6 +15,8 @@ export class Game {
 
         //is ir base, expansion or dlc
         typeOfGame : string ;
+    lastUpdated?: Date;
+    created?: Date;
       
        // category: Category;
       

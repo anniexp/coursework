@@ -20,6 +20,50 @@ getAll(): Observable < Game[]> {
 const url = environment.apiUrl + "/games";
 
 return this.httpClient.get<Game[]>(url);
+}
+
+getById$(id: number): Observable<Game> {
+    const url = `${environment.apiUrl}/games/${id}`;
+
+    return this.httpClient.get<Game>(url);
+  }
+
+
+  edit$(game: Game): Observable<Game> {
+    const url = `${environment.apiUrl}/categories/${game.id}`;
+
+    game.lastUpdated = new Date();
+
+    return this.httpClient.put<Game>(url, game);
+
+  }create$(game: Game): Observable<Game> {
+    const url = environment.apiUrl + '/categories';
+
+    game.created = new Date();
+    game.lastUpdated = new Date();
+
+    return this.httpClient.post<Game>(url, game);
+  }
+
+  save$(category: Game): Observable<Game> {
+    if (!category.id) {
+      return this.create$(category);
+    } else {
+      return this.edit$(category);
+    }
+  }
+/*
+  category:created = new Date();
+ category.lastUpdated = new Date();*/
+ delete$(id: number): Observable<void> {
+    const url = `${environment.apiUrl}/games/${id}`;
+
+    return this.httpClient.delete<void>(url);
+  }
+
+
+
+
 /*
 return of( [
 
@@ -70,7 +114,7 @@ return of( [
 
      
 
-}
+
 
 
 

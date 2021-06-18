@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Gcategory } from '../../models/gcategory.model';
+import { GcategoriesServise } from '../../services/gcategories.services';
 
 @Component({
   selector: 'lq-gcategories-list',
@@ -7,9 +9,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GcategoriesListComponent implements OnInit {
 
-  constructor() { }
+gcategories : Gcategory[] = [];
+  constructor(private gcategoriesService :GcategoriesServise) { 
+
+    this.gcategoriesService.getAll().subscribe((response => {
+ 
+      this.gcategories = response;
+    }))
+
+  }
 
   ngOnInit(): void {
   }
 
 }
+
+
+
