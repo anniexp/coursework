@@ -1,6 +1,6 @@
 #mainHeader
 {
-width: 1500px;
+width: auto;
 height: 135px;
 font-size:1em;
 margin-top:-7px;
@@ -9,29 +9,29 @@ background-color:white;
 
 #wrapper
 {
-width: 1500px;
+width: auto;
 margin: 0 auto;
 }
 #grayLine {
-width: 1500px;
-height: 20px;
+width: auto;
+height: 30px;
 font-size:1em;
 background-color:black;
 
 }
 #white-line
 {
-width: 1500px;
+width: auto;
 height:20px;
 background-color:white;
 }
 
 #logo {
-width: 1500px;
+width: auto;
 height: 100px;
 text-align:center;
 font-size:65px;
-font-style:italic;
+font-style:bold;
 font-family:'Curlz MT';
 background-color:#FFDC73;
 }
@@ -43,7 +43,7 @@ position:relative;
  border-radius: 0px 0px 30px 30px;
 }
 
-#text-nav-bar
+#text-nav-bar-i
 {
 position:absolute;
 bottom: 0;
@@ -64,7 +64,7 @@ background-color:white;
 margin-top:5px;
 margin-left:20px;
 
-border-radius: 15px;
+border-radius: 10px;
 }
 .dropdown {
   position: relative;
@@ -94,17 +94,17 @@ color:black;
 /*visited link*/
 a:visited
 {
-color: darkred;
+color: rgb(255, 174, 0);
 }
 /*mouse over link*/
 a:hover
 {
-color:darkorange;
+color:rgb(103, 224, 66);
 }
 /*selected link*/
 a:active
 {
-color:maroon;
+color:rgb(199, 125, 14);
 }
 
 
@@ -182,16 +182,16 @@ font-size: 18px;
 }
 #mainContent
 {
-width: 1000px;
+width: auto;
 height: auto;
 opacity: 0.8;
 
-margin-left: 465px;
+
 text-align:left;
 font-size:20px;
 font-style:normal;
 
-background-color:#f7e6ff;
+background-color:#89ff8f;
  border-radius: 25px;
 }
 

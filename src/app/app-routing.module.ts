@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { DashboardComponent } from './dashboard/dashboard.component';
 import { GamesListComponent } from './games/components/games-list/games-list.component';
 
 const routes: Routes = [
@@ -9,12 +10,22 @@ const routes: Routes = [
    // component : GamesListComponent
    //lazy loading
    loadChildren: () => import ('./games/games.module').then(m => m.GamesModule)
-  },
+  }
   /*{
     path: 'categories',
-    component : 
+    loadChildren: () => import('./categories/categories.module').then(m => m.CategoriesModule)
 
-  }*/
+  },*/
+  ,
+  {
+    path: 'dashboard',
+    component: DashboardComponent
+  },
+{
+path :'',
+redirectTo: 'dashboard',
+pathMatch: 'full'
+}
 ];
 
 

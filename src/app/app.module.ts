@@ -8,12 +8,14 @@ import { HttpClientModule } from '@angular/common/http';
 import { GamesListComponent } from './games/components/games-list/games-list.component';
 import { RouterModule, Routes } from '@angular/router';
 import { GamesModule } from './games/games.module';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 
 
 @NgModule({
   declarations: [
     AppComponent,
+    DashboardComponent,
     
   ],
   imports: [
