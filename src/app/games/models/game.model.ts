@@ -6,7 +6,7 @@ export class Game {
         language: string;
         price: number;
         discount: number;
-        rating : number | undefined;
+        rating : number ;
         isOriginalityCertificateIncluded: boolean;
         posterImgUrl: string ;
         publishAt?: Date ;
@@ -24,8 +24,9 @@ export class Game {
           this.language = '';
           this.price = 0;
           this.discount = 0;
+          this.rating =0; 
           this.isOriginalityCertificateIncluded = true;
-          this.publishAt ;
+         
           this.posterImgUrl = '';
           this.numberOfPlayers = ''
           this.timeOfAGameInMinutes = ''

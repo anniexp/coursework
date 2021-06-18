@@ -1,1 +1,53 @@
-<p>games-list works!</p>
+
+<div  class="mainContent">
+    <table class="table">
+      <thead>
+      <tr class="warning">
+        <th >ID</th>
+        <th>Picture</th>
+        <th>Title</th>
+        <th>Rating</th>
+        <th>Date of Publishing</th>
+        <th>Language</th>
+        <th>Price</th>
+        <th>Discount</th>
+        <th>Number of Players</th>
+        <th>Time of a game</th>
+        <th>TypeOfGame</th>
+        <th>Certified</th>
+      
+      </tr>
+      </thead>
+      <tbody>
+      <tr class="warning" *ngFor="let game of games">
+        <td>{{game.id}}</td>
+        <td>
+          <div class="game-summary">
+              <div class = "aside-img-left"></div>
+            <div class="game-image-container">
+              <img [src]="game.posterImgUrl" [alt]="game.title">
+            </div> 
+          </div>
+        </td>
+      
+        <td>{{game.title}}</td>
+        <td>{{game.rating }}</td>
+        <td>{{game.publishAt | date }}</td>
+        <td>{{game.language}}</td>
+        <td>{{game.price}}</td>
+        <td>{{game.discount}}%</td>
+        <td>{{game.numberOfPlayers}}</td>
+        <td>{{game.timeOfAGameInMinutes}}</td>
+        <td>{{game.typeOfGame}}</td>
+        
+        <td>
+          <span *ngIf="game.isOriginalityCertificateIncluded; else certificateNotIncluded">Yes</span>
+          <ng-template #certificateNotIncluded>
+            <span>-</span>
+          </ng-template>
+        </td>
+      
+      </tr>
+      </tbody>
+    </table>
+  </div>

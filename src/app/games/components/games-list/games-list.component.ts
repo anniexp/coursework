@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Game } from '../../models/game.model';
+import { GamesServise } from '../../services/games.services';
 
 @Component({
   selector: 'lq-games-list',
@@ -6,8 +8,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./games-list.component.scss']
 })
 export class GamesListComponent implements OnInit {
+  games: Game[] = [];
 
-  constructor() { }
+  constructor(private gameService : GamesServise)
+  {
+ 
+ //this.games = this.gameService.getAll();
+ this.gameService.getAll().subscribe((response => {
+ 
+   this.games = response;
+ }))
+ 
+  }
 
   ngOnInit(): void {
   }
