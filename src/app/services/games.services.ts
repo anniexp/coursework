@@ -5,6 +5,7 @@ import { Observable } from "rxjs";
 import { Game } from "../models/game.model";
 import {HttpClient} from "@angular/common/http";
 import { Injectable } from "@angular/core";
+import { environment } from "src/environments/environment";
 
 @Injectable({providedIn:"root"})
 export class GamesServise{
@@ -15,7 +16,10 @@ export class GamesServise{
     }
 
 getAll(): Observable < Game[]> {
-return this.httpClient.get<Game[]>('http://localhost:3000/games');
+//hardcoded variable for the json server url 
+const url = environment.apiUrl + "games"
+
+return this.httpClient.get<Game[]>(url);
 /*
 return of( [
 
