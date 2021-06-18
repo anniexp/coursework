@@ -21,11 +21,11 @@ const routes: Routes = [
     {
       path: 'edit/:id',
       component: GamesEditComponent
-    },
-    {
+    }*/,
+ {
       path: '',
       redirectTo: 'list'
-    }*/
+    }
   ];
   
   @NgModule({

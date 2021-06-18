@@ -10,12 +10,12 @@ const routes: Routes = [
    // component : GamesListComponent
    //lazy loading
    loadChildren: () => import ('./games/games.module').then(m => m.GamesModule)
-  }
-  /*{
+  },
+  {
     path: 'categories',
-    loadChildren: () => import('./categories/categories.module').then(m => m.CategoriesModule)
+    loadChildren: () => import('./gcategories/gcategories.module').then(m => m.GcategoriesModule)
 
-  },*/
+  }
   ,
   {
     path: 'dashboard',
