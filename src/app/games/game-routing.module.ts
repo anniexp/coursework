@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { GameDetailsComponent } from './components/game-details/game-details.component';
 import { GamesListComponent } from './components/games-list/games-list.component';
 
 
@@ -8,19 +9,19 @@ const routes: Routes = [
       path: 'list',
       component: GamesListComponent
     }
-    /*
+    
     ,
     {
       path: 'details/:id',
-      component: GamesDetailsComponent
-    },
+      component: GameDetailsComponent
+    }/*
     {
       path: 'create',
-      component: GamesEditComponent
+      component: GameEditComponent
     },
     {
       path: 'edit/:id',
-      component: GamesEditComponent
+      component: GameEditComponent
     }*/,
  {
       path: '',

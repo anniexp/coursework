@@ -3,6 +3,7 @@ import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
 import { GamesListComponent } from "./components/games-list/games-list.component";
 import { GamesRoutingModule } from "./game-routing.module";
+import { GameDetailsComponent } from './components/game-details/game-details.component';
 
 
 
@@ -17,7 +18,8 @@ GamesRoutingModule
 
     ],
     declarations:[
-        GamesListComponent
+        GamesListComponent,
+        GameDetailsComponent
         
     ],
     exports:[

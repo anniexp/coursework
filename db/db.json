@@ -49,5 +49,37 @@
       
         
           }
+        ],
+        "categories": [
+          {
+            "id": 1,
+            "created": "2021-04-10T08:41:26.804Z",
+            "lastUpdated": "2021-04-10T08:41:26.804Z",
+            "name": "Classic"
+          },
+          {
+            "id": 2,
+            "created": "2021-04-11T08:41:26.804Z",
+            "lastUpdated": "2021-04-11T08:41:26.804Z",
+            "name": "Strategic"
+          },
+          {
+            "name": "Puzzles",
+            "created": "2021-05-09T12:39:03.872Z",
+            "lastUpdated": "2021-05-09T12:39:03.872Z",
+            "id": 3
+          },
+          {
+          "id": 4,
+          "created": "2021-04-10T08:41:26.804Z",
+          "lastUpdated": "2021-04-10T08:41:26.804Z",
+          "name": "Roleplaying"
+        },
+        {
+          "id": 5,
+          "created": "2021-04-11T08:41:26.804Z",
+          "lastUpdated": "2021-04-11T08:41:26.804Z",
+          "name": "Board Game"
+        }
         ]  
   }

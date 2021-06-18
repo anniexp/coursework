@@ -27,10 +27,13 @@
             <div class="game-image-container">
               <img width="200px" height="auto" [src]="game.posterImgUrl" [alt]="game.title">
             </div> 
+            <div class="game-titles-container">
+              <a class="game-title" [routerLink]="['/', 'games', 'details', game.id]">{{game.title}}</a>
+              
+            </div>
           </div>
         </td>
-      
-        <td>{{game.title}}</td>
+     
         <td>{{game.rating }}</td>
         <td>{{game.publishAt | date }}</td>
         <td>{{game.language}}</td>
