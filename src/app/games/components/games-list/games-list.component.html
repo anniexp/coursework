@@ -1,3 +1,11 @@
+<div class="d-flex justify-content-between mt-2">
+  <h3>Games</h3>
+  <div>
+  </div>
+</div>
+
+
+
 
 <div  class="mainContent">
     <table class="table">
@@ -8,6 +16,7 @@
         <th>Title</th>
         <th>Rating</th>
         <th>Date of Publishing</th>
+        <th>Category</th>
         <th>Language</th>
         <th>Price</th>
         <th>Discount</th>
@@ -27,15 +36,21 @@
             <div class="game-image-container">
               <img width="200px" height="auto" [src]="game.posterImgUrl" [alt]="game.title">
             </div> 
+          </div>
+        </td>
+        <td>
             <div class="game-titles-container">
               <a class="game-title" [routerLink]="['/', 'games', 'details', game.id]">{{game.title}}</a>
               
+
             </div>
-          </div>
         </td>
+      
+       
      
         <td>{{game.rating }}</td>
         <td>{{game.publishAt | date }}</td>
+        <td>{{game.categoryId}}</td>
         <td>{{game.language}}</td>
         <td>{{game.price}}</td>
         <td>{{game.discount}}%</td>
@@ -49,9 +64,16 @@
             <span>-</span>
           </ng-template>
         </td>
-      
+      <td>
+        <a class="btn btn-sm btn-outline-primary"
+           [routerLink]="['/', 'games', 'edit', game.id]">Edit</a>
+        </td>
       </tr>
       </tbody>
     </table>
  
   </div>
+
+  
+  
+  

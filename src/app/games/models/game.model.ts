@@ -2,7 +2,7 @@ export class Game {
     
         id : number ;
         title: string;
-       // categoryId: number;
+        categoryId: number;
         language: string;
         price: number;
         discount: number;
@@ -20,6 +20,7 @@ export class Game {
       
         constructor() {
           this.id = 0;
+          this.categoryId= 0;
           this.title ='';
           this.language = '';
           this.price = 0;
