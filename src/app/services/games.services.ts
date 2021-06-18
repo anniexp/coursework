@@ -1,14 +1,22 @@
 //import { of } from "rxjs";
 //import { Observable } from "rxjs";
-import { of } from "rxjs";
+//import { of } from "rxjs";
 import { Observable } from "rxjs";
 import { Game } from "../models/game.model";
+import {HttpClient} from "@angular/common/http";
+import { Injectable } from "@angular/core";
 
+@Injectable({providedIn:"root"})
 export class GamesServise{
+  
+    constructor(private httpClient :HttpClient){
 
+
+    }
 
 getAll(): Observable < Game[]> {
-
+return this.httpClient.get<Game[]>('http://localhost:3000/games');
+/*
 return of( [
 
     {
@@ -41,7 +49,7 @@ return of( [
           discount: 15,
           rating : 8.1,
           isOriginalityCertificateIncluded: true,
-          posterImgUrl: 'https://cdn.shopify.com/s/files/1/1355/2451/products/71BrQ6ZxQDL_1024x1024.jpg?v=1584728957',
+          posterImgUrl: 'https://2.bp.blogspot.com/-gUUCIcOWvL0/VDxLzhFzGgI/AAAAAAAADng/8Q5lYO2Q2DM/s1600/Monopoly%2B_Classic_packshot_NL.jpg',
           publishAt: new Date(),
           numberOfPlayers : '2-4',
           timeOfAGameInMinutes : '60+',
@@ -53,7 +61,7 @@ return of( [
       
         }
       ]  
-)
+)*/
     }
 
      

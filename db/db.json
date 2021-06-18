@@ -1,0 +1,53 @@
+{
+    "posts": [
+      {
+        "id": 1,
+        "title": "json-server",
+        "author": "typicode"
+      }
+    ],
+    "comments": [
+      {
+        "id": 1,
+        "body": "some comment",
+        "postId": 1
+      }
+    ],
+  "games" : [
+  {
+   
+          "id" : 1, 
+              
+                "title": "DUNGEONS&DRAGONS 5TH EDITION - STARTER SET",
+                "categoryId": 1,
+                "language": "English",
+                "price": 41.90,
+                "discount": 0,
+               "rating": 8.1,
+                "isOriginalityCertificateIncluded": true,
+                "posterImgUrl": "https://cdn.shopify.com/s/files/1/1355/2451/products/71BrQ6ZxQDL_1024x1024.jpg?v=1584728957",
+                "publishAt": "2021-04-24T08:35:47.070Z",
+                "numberOfPlayers": "2-15",
+                "timeOfAGameInMinutes": "unknown",  
+                "typeOfGame": "base"                       
+          },
+          {
+            "id" : 2,         
+            "title": "Monopoly",
+            "categoryId": 2,
+            "language": "Bulgarian",
+            "price": 48.90,
+            "discount": 15,
+            "rating": 8.1,
+            "isOriginalityCertificateIncluded": true,
+            "posterImgUrl": "https://2.bp.blogspot.com/-gUUCIcOWvL0/VDxLzhFzGgI/AAAAAAAADng/8Q5lYO2Q2DM/s1600/Monopoly%2B_Classic_packshot_NL.jpg",
+            "publishAt":"2021-04-24T08:35:47.070Z",
+            "numberOfPlayers": "2-4",
+            "timeOfAGameInMinutes": "60+",   
+            "typeOfGame": "base"
+          
+      
+        
+          }
+        ]  
+  }
