@@ -17,7 +17,7 @@ export class GamesServise{
 
 getAll(): Observable < Game[]> {
 //hardcoded variable for the json server url 
-const url = environment.apiUrl + "games"
+const url = environment.apiUrl + "/games";
 
 return this.httpClient.get<Game[]>(url);
 /*
