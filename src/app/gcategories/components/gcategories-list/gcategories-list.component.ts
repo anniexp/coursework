@@ -10,7 +10,10 @@ import { GcategoriesServise } from '../../services/gcategories.services';
 export class GcategoriesListComponent implements OnInit {
 
 gcategories : Gcategory[] = [];
-  constructor(private gcategoriesService :GcategoriesServise) { 
+  constructor(private gcategoriesService :GcategoriesServise
+    //,
+   // private bsModalService: BsModalService
+    ) { 
 
     this.gcategoriesService.getAll().subscribe((response => {
  

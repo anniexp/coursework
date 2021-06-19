@@ -10,7 +10,10 @@ import { GamesServise } from '../../services/games.services';
 export class GamesListComponent implements OnInit {
   games: Game[] = [];
 
-  constructor(private gameService : GamesServise)
+  constructor(private gameService : GamesServise,
+    
+    
+    )
   {
  
  //this.games = this.gameService.getAll();

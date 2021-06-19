@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Game } from '../../models/game.model';
+import { GamesServise } from '../../services/games.services';
 
 @Component({
   selector: 'lq-game-create',
@@ -11,10 +13,20 @@ export class GameCreateComponent implements OnInit {
 
 
   formGroup?: FormGroup;
+  id: string | null;
+
 
   
 
-  constructor(private fb: FormBuilder) { }
+  constructor(
+   private gamesService: GamesServise,
+              private router: Router,
+              private route: ActivatedRoute,
+              private fb: FormBuilder) {
+    this.id = this.route.snapshot.paramMap.get('id');
+    console.log(this.id)
+    
+    }
 
   ngOnInit(): void {
     this.buildForm();

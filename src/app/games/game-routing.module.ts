@@ -20,10 +20,10 @@ const routes: Routes = [
       path: 'create',
       component: GameCreateComponent
     },
-    /*{
+    {
       path: 'edit/:id',
-      component: GameEditComponent
-    },*/
+      component: GameCreateComponent
+    },
  {
       path: '',
       redirectTo: 'list'
