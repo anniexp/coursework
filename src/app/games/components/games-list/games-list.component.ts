@@ -11,8 +11,6 @@ export class GamesListComponent implements OnInit {
   games: Game[] = [];
 
   constructor(private gameService : GamesServise,
-    
-    
     )
   {
  

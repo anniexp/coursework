@@ -45,11 +45,11 @@ getById$(id: number): Observable<Game> {
     return this.httpClient.post<Game>(url, game);
   }
 
-  save$(category: Game): Observable<Game> {
-    if (!category.id) {
-      return this.create$(category);
+  save$(game: Game): Observable<Game> {
+    if (!game.id) {
+      return this.create$(game);
     } else {
-      return this.edit$(category);
+      return this.edit$(game);
     }
   }
 /*

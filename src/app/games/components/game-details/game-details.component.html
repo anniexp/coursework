@@ -1,1 +1,36 @@
 <p>game-details works!</p>
+<div *ngIf="game">
+    <div class="course-title">
+      <h1>{{game.title}}</h1>
+      
+    </div>
+  
+    <div class="course-details">
+      <ul>
+        <li><span class="font-weight-bold">Category: </span>{{game.categoryId}}</li>
+        <li><span class="font-weight-bold">Language: </span>{{game.language}}</li>
+        <li><span class="font-weight-bold">Current Price: </span>${{getCurrentPrice() | number:'1.2-2'}}
+          (-{{game.discount}}% discount)
+        </li>
+        <li><span>Regular price: </span>${{game.price}}</li>
+        <li><span class="font-weight-bold">Include certificate: </span>{{game.isOriginalityCertificateIncluded ? 'Yes' : '-'}}</li>
+      </ul>
+    </div>
+  
+    <div class="game-image">
+      <img [src]="game.posterImgUrl" [alt]="game.title">
+    </div>
+  
+    <div class="game-information">
+      <ul>
+        <li><span class="font-weight-bold">Publish at: </span>{{game.publishAt | date}}</li>
+        <li><span class="font-weight-bold">Created: </span>{{game.created | date}}</li>
+        <li><span class="font-weight-bold">Last updated: </span>{{game.lastUpdated | date}}</li>
+      </ul>
+    </div>
+  
+    <div class="game-description">
+    
+    </div>
+  </div>
+  

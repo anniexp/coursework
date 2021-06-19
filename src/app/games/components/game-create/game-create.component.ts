@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { take } from 'rxjs/operators';
 import { Game } from '../../models/game.model';
 import { GamesServise } from '../../services/games.services';
 
@@ -12,8 +13,11 @@ import { GamesServise } from '../../services/games.services';
 export class GameCreateComponent implements OnInit {
 
 
-  formGroup?: FormGroup;
-  id: string | null;
+  formGroup: FormGroup | undefined;
+  id: number;
+  game: unknown;
+
+
 
 
   
@@ -23,23 +27,62 @@ export class GameCreateComponent implements OnInit {
               private router: Router,
               private route: ActivatedRoute,
               private fb: FormBuilder) {
-    this.id = this.route.snapshot.paramMap.get('id');
+    const serializableState: string | any = this.route.snapshot.paramMap.get('id');
+    this.id = serializableState;
     console.log(this.id)
+    //return serializableState !==null ||serializableState === undefined ? this.route.snapshot.paramMap.get('id'):undefined;
+              
+              }
     
-    }
-
+    
+          
+    
+/*
   ngOnInit(): void {
     this.buildForm();
-    
+    if(this.id){
+console.log("edit mode")
+this.gamesService.getById$(this.id).pipe(
+
+
+)
+    }
+else
+{
+  console.log("create mode")
+
+
+    }
+  
+  }*/
+  
+  ngOnInit(): void {
+   if (this.id) {
+      this.gamesService.getById$(this.id).pipe(
+        take(1)
+      ).subscribe((response) => {
+        this.game = response;
+        this.buildForm(response);
+      });
+    } else {
+      this.buildForm();
+    }
+    //this.buildForm();
   }
+
 onSubmit(): void {
 
  
 }
 
-  private buildForm(): void{
+  private buildForm(game?:Game): void{
+if(!game){
+game = new Game();
+
+}
+
 this.formGroup = this.fb.group({
-        title:[ null, Validators.required ] ,   
+        title:[ game.title, Validators.required ] ,   
         posterImgUrl:null, 
        categoryId: 0,
         language:[ null, Validators.required ] ,
@@ -60,3 +103,5 @@ this.formGroup = this.fb.group({
 
   }
 }
+
+
