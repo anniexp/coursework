@@ -9,6 +9,8 @@ import { GamesListComponent } from './games/components/games-list/games-list.com
 import { RouterModule, Routes } from '@angular/router';
 import { GamesModule } from './games/games.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { ModalModule } from 'ngx-bootstrap/modal';
+
 
 
 
@@ -20,8 +22,10 @@ import { DashboardComponent } from './dashboard/dashboard.component';
   ],
   imports: [
     BrowserModule,
+    ModalModule.forRoot(),
     AppRoutingModule,
     HttpClientModule,
+    ModalModule,
    // GamesModule,
   
    
