@@ -30,14 +30,14 @@ getById$(id: number): Observable<Game> {
 
 
   edit$(game: Game): Observable<Game> {
-    const url = `${environment.apiUrl}/categories/${game.id}`;
+    const url = `${environment.apiUrl}/games/${game.id}`;
 
     game.lastUpdated = new Date();
 
     return this.httpClient.put<Game>(url, game);
 
   }create$(game: Game): Observable<Game> {
-    const url = environment.apiUrl + '/categories';
+    const url = environment.apiUrl + '/games';
 
     game.created = new Date();
     game.lastUpdated = new Date();

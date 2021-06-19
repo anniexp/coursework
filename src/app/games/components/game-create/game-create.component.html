@@ -17,7 +17,7 @@
       
       <div class="form-group">
         <label for="language">Select Language</label>
-        <select class="form-control" id="language">
+        <select formControlName = "language" class="form-control" id="language">
           <option>Bulgarian</option>
           <option>English</option>
           <option>Russian</option>
@@ -27,31 +27,31 @@
       </div>
       <div class="form-group">
         <label for="price">Price</label>
-        <input type="number" class="form-control" id="price"  placeholder="Enter title">
+        <input formControlName="price" type="number" class="form-control" id="price"  placeholder="Enter price">
       </div>
       <div class="form-group">
         <label for="typeOfGame">Type</label>
-        <input type="text" class="form-control" id="typeOfGame"  placeholder="Enter title">
+        <input formControlName="typeOfGame" type="text" class="form-control" id="typeOfGame"  placeholder="Enter type">
       </div>
       <div class="form-group">
         <label for="discount">Discount</label>
-        <input type="number" class="form-control" id="discount"  placeholder="Enter percent">
+        <input formControlName="discount" type="number" class="form-control" id="discount"  placeholder="Enter percent">
       </div>
       <div class="form-group">
         <label for="numberOfPlayers">Number of players</label>
-        <input type="text" class="form-control" id="numberOfPlayers"  placeholder="Enter number">
+        <input formControlName="numberOfPlayers" type="text" class="form-control" id="numberOfPlayers"  placeholder="Enter number">
       </div>
       <div class="form-group">
         <label for="timeOfAGameInMinutes">Time of a play</label>
-        <input type="text" class="form-control" id="timeOfAGameInMinutes"  placeholder="Enter time">
+        <input formControlName="timeOfAGameInMinutes" type="text" class="form-control" id="timeOfAGameInMinutes"  placeholder="Enter time">
       </div>
       <div class="form-group">
         <label for="rating">Rating</label>
-        <input type="number" class="form-control" id="rating" placeholder="Enter rating">
+        <input type="number" formControlName="rating" class="form-control" id="rating" placeholder="Enter rating">
       </div>
       <div class="form-group">
         <label for="categoryId">Select Category</label>
-        <select class="form-control" id="categoryId">
+        <select class="form-control" formControlName="categoryId" id="categoryId">
           <option>1</option>
           <option>2</option>
           <option>3</option>
@@ -60,7 +60,7 @@
         </select>
       </div>
       <div class="checkbox">
-        <label><input type="checkbox"> Authentication Certificate</label>
+        <label><input formControlName="isOriginalityCertificateIncluded" type="checkbox"> Authentication Certificate</label>
       </div>
     <button type="submit" class="btn btn-primary" [disabled]="formGroup.invalid">Submit</button>
     

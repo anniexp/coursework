@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { take } from 'rxjs/operators';
 import { Game } from '../../models/game.model';
 import { GamesServise } from '../../services/games.services';
 
@@ -23,6 +24,18 @@ export class GamesListComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    
+    this.getAlls();
+  
   }
+  private getAlls(): void {
+    this.gameService.getAll().pipe(
+      take(1)
+    ).subscribe((response) => {
+      this.games = response;
+    });
+  }
+  
+
 
 }

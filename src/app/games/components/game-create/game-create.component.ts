@@ -13,9 +13,9 @@ import { GamesServise } from '../../services/games.services';
 export class GameCreateComponent implements OnInit {
 
 
-  formGroup: FormGroup | undefined;
+  formGroup!: FormGroup;
   id: number;
-  game: unknown;
+  game: Game = new Game;
 
 
 
@@ -70,10 +70,31 @@ else
     //this.buildForm();
   }
 
-onSubmit(): void {
-
  
+ 
+
+onSubmit(): void {
+  if (this.formGroup.invalid) {
+    this.formGroup.markAllAsTouched();
+
+    return;
+  }
+
+  const body: Game = {
+    ...this.game,
+    ...this.formGroup.value
+  };
+
+  delete body.lastUpdated;
+
+  this.gamesService.save$(body).pipe(
+    take(1)
+  ).subscribe(() => {
+    //this.toastrService.success('Course was successfully saved.', 'Success');
+    this.router.navigate(['games']);
+  });
 }
+
 
   private buildForm(game?:Game): void{
 if(!game){
