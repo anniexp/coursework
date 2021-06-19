@@ -59,6 +59,22 @@
       "typeOfGame": "fffsgsgr",
       "created": "2021-06-19T09:11:55.149Z",
       "lastUpdated": "2021-06-19T09:12:51.615Z"
+    },
+    {
+      "id": 4,
+      "categoryId": "4",
+      "title": "grdgfgg",
+      "language": "Russian",
+      "price": 6,
+      "discount": 1,
+      "rating": 3,
+      "isOriginalityCertificateIncluded": true,
+      "posterImgUrl": "sfss",
+      "numberOfPlayers": "gbgdfr",
+      "timeOfAGameInMinutes": "ddhd",
+      "typeOfGame": "sgsggs",
+      "created": "2021-06-19T10:33:39.771Z",
+      "lastUpdated": "2021-06-19T10:33:39.771Z"
     }
   ],
   "categories": [
@@ -103,6 +119,5 @@
       "created": "2021-06-19T08:52:02.542Z",
       "lastUpdated": "2021-06-19T08:52:02.542Z"
     }
-    
   ]
 }

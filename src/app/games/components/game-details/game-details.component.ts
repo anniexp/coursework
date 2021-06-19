@@ -15,7 +15,9 @@ import { GamesServise } from '../../services/games.services';
 
 export class GameDetailsComponent implements OnInit {
   [x: string]: any;
-  id: string|null;
+  //id: string|null;
+ id!: number;
+game: Game = new Game;
  // game: Game = new Game();
 
   /*
@@ -32,9 +34,14 @@ export class GameDetailsComponent implements OnInit {
     //private toastrService: ToastrService,
     private router: Router,
     private route: ActivatedRoute) {
-      console.log(this.route.snapshot.paramMap.get('id'));
-    this.id = this.route.snapshot.paramMap.get('id');
-  
+      console.log(typeof this.route.snapshot.paramMap.get('id'));
+      
+      //the assistents solution
+    if(this.route.snapshot.paramMap.get('id'))
+    {
+      this.id = +this.route.snapshot.params.id;
+    }
+    
   
     if(typeof this.id ==='number') {}
 
