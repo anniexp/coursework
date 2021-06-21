@@ -65,57 +65,47 @@
       "categoryId": "4",
       "title": "grdgfgg",
       "language": "Russian",
-      "price": 6,
-      "discount": 1,
-      "rating": 3,
-      "isOriginalityCertificateIncluded": true,
-      "posterImgUrl": "sfss",
-      "numberOfPlayers": "gbgdfr",
-      "timeOfAGameInMinutes": "ddhd",
-      "typeOfGame": "sgsggs",
+      "price": 0,
+      "discount": 0,
+      "rating": 0,
+      "isOriginalityCertificateIncluded": false,
+      "posterImgUrl": "hjbhhj",
+      "numberOfPlayers": "999",
+      "timeOfAGameInMinutes": "yo",
+      "typeOfGame": "79",
       "created": "2021-06-19T10:33:39.771Z",
-      "lastUpdated": "2021-06-19T10:33:39.771Z"
+      "lastUpdated": "2021-06-21T11:07:53.151Z"
     }
   ],
   "categories": [
     {
-      "id": 1,
+      "categoryId": 1,
       "created": "2021-04-10T08:41:26.804Z",
       "name": "Classic"
     },
     {
-      "id": 2,
+      "categoryId": 2,
       "created": "2021-04-11T08:41:26.804Z",
       "name": "Strategic"
     },
     {
       "name": "Puzzles",
       "created": "2021-05-09T12:39:03.872Z",
-      "id": 3
+      "categoryId": 3
     },
     {
-      "id": 4,
+      "categoryId": 4,
       "created": "2021-04-10T08:41:26.804Z",
       "name": "Roleplaying"
     },
     {
-      "id": 5,
+      "categoryId": 5,
       "created": "2021-04-11T08:41:26.804Z",
       "name": "Board Game"
     },
     {
-      "id": 6,
-      "categoryId": "5",
-      "title": "fsdefe",
-      "language": "Bulgarian",
-      "price": 40,
-      "discount": 1,
-      "rating": 2,
-      "isOriginalityCertificateIncluded": true,
-      "posterImgUrl": "feff",
-      "numberOfPlayers": "4-5",
-      "timeOfAGameInMinutes": "40 + min",
-      "typeOfGame": "hf",
+      "categoryId": "6",
+      "name": "fsdefe",
       "created": "2021-06-19T08:52:02.542Z",
       "lastUpdated": "2021-06-19T08:52:02.542Z"
     }

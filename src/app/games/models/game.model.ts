@@ -1,3 +1,5 @@
+import { Gcategory } from "src/app/gcategories/models/gcategory.model";
+
 export class Game {
     
         id : number ;
@@ -17,6 +19,8 @@ export class Game {
         typeOfGame : string ;
     lastUpdated?: Date;
     created?: Date;
+
+    category!: Gcategory;
       
        // category: Category;
       
@@ -34,6 +38,7 @@ export class Game {
           this.numberOfPlayers = ''
           this.timeOfAGameInMinutes = ''
           this.typeOfGame = ''
+          this.category;
         }
       }
 

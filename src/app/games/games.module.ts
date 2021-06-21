@@ -5,7 +5,11 @@ import { GamesListComponent } from "./components/games-list/games-list.component
 import { GamesRoutingModule } from "./game-routing.module";
 import { GameDetailsComponent } from './components/game-details/game-details.component';
 import { GameCreateComponent } from './components/game-create/game-create.component';
-import { ReactiveFormsModule } from "@angular/forms";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { ModalModule } from "ngx-bootstrap/modal";
+import { ButtonsModule } from 'ngx-bootstrap/buttons';
+
+
 
 
 
@@ -15,9 +19,11 @@ import { ReactiveFormsModule } from "@angular/forms";
 CommonModule,
 //forChild - adds to the route
 //RouterModule.forChild(routes)
-
+ModalModule.forChild(),
 GamesRoutingModule,
-ReactiveFormsModule
+ReactiveFormsModule,
+FormsModule,
+ButtonsModule.forRoot(),
 
     ],
     declarations:[

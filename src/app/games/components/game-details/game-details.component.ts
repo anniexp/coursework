@@ -14,10 +14,11 @@ import { GamesServise } from '../../services/games.services';
 })
 
 export class GameDetailsComponent implements OnInit {
-  [x: string]: any;
+  //[x: string]: any;
   //id: string|null;
  id!: number;
 game: Game = new Game;
+  gamesService: any;
  // game: Game = new Game();
 
   /*
@@ -56,7 +57,7 @@ take(1)
 ).subscribe((game: Game) => {
 this.game = game;
 }, (response: HttpErrorResponse) => {
-this.toastrService.error(response.message, 'Error');
+//this.toastrService.error(response.message, 'Error');
 this.router.navigate(['games']);
 });
 }

@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { HttpErrorResponse } from '@angular/common/http';
+import { Component, OnInit, TemplateRef } from '@angular/core';
+import { BsModalRef } from 'ngx-bootstrap/modal';
 import { take } from 'rxjs/operators';
 import { Game } from '../../models/game.model';
 import { GamesServise } from '../../services/games.services';
@@ -10,6 +12,9 @@ import { GamesServise } from '../../services/games.services';
 })
 export class GamesListComponent implements OnInit {
   games: Game[] = [];
+  selectedGame!: Game;
+  modalRef!: BsModalRef;
+  bsModalService: any;
 
   constructor(private gameService: GamesServise,
   ) {
@@ -35,6 +40,25 @@ export class GamesListComponent implements OnInit {
     });
   }
 
+  openDeleteDialog(template: TemplateRef<any>, game: Game): void {
+    this.selectedGame = game;
+    this.modalRef = this.bsModalService.show(template);
+  }
+
+  deleteGame(): void {
+    this.gameService.delete$(this.selectedGame.id).pipe(
+      take(1)
+    ).subscribe(() => {
+      this.getAlls();
+      //this.toastrService.success('Course was successfully deleted.', 'Success');
+      this.modalRef.hide();
+    }, (response: HttpErrorResponse) => {
+    /*  this.toastrService.error(response.message, 'Error', {
+        disableTimeOut: true,
+        closeButton: true
+      });*/
+    });
+  }
 
 
 }
