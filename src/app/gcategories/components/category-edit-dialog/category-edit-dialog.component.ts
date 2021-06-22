@@ -1,9 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { BsModalRef } from 'ngx-bootstrap/modal';
 import { take } from 'rxjs/operators';
 import { Gcategory } from '../../models/gcategory.model';
 import { GcategoriesServise } from '../../services/gcategories.services';
+import { ToastrService } from 'ngx-toastr';
 
 
 
@@ -13,34 +14,15 @@ import { GcategoriesServise } from '../../services/gcategories.services';
   styleUrls: ['./category-edit-dialog.component.scss']
 })
 export class CategoryEditDialogComponent implements OnInit {
-/*
-  constructor() { }
 
-  ngOnInit(): void {
-  }*/
+  categorySaved = new EventEmitter<Gcategory>();
 
-
-  /*
-    constructor() { }
-  
-    ngOnInit(): void {
-    }*/
-  /*
-    constructor() { }
-  
-    ngOnInit(): void {
-    }*/
-  /*
-    constructor() { }
-  
-    ngOnInit(): void {
-    }*/
     formGroup!: FormGroup;
     id!: number;
-  category: Gcategory = new Gcategory;
+  category!: Gcategory ;
 
   constructor(private gcategoriesService: GcategoriesServise,
-              
+    private toastrService: ToastrService,
               private bsModalRef: BsModalRef,
               private fb: FormBuilder) {
   }
@@ -73,10 +55,11 @@ export class CategoryEditDialogComponent implements OnInit {
     this.gcategoriesService.save$(body).pipe(
       take(1)
     ).subscribe((response) => {
-      
+      this.toastrService.success('Category was successfully saved.', 'Success');
       this.hideDialog();
-      //this.categorySaved.emit(response);
-    });
+      this.categorySaved.emit(response);});
+    
+
   }
 
   hideDialog(): void {

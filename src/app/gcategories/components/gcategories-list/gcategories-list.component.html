@@ -1,50 +1,42 @@
 <p>gcategories-list works!</p>
 <div class="d-flex justify-content-between mt-2">
-    <h3>Categories</h3>
-    <div>
-      <a routerLink="../create" class="btn btn-primary">Create</a>
-    </div>
+  <h3>Categories</h3>
+  <div>
+    <button (click)="onCreateClick()" class="btn btn-primary">Create</button>
   </div>
-  
-  
-  
-  
-  <div  class="mainContent">
-      <table class="table">
-        <thead>
-        <tr class="warning">
-          <th >ID</th>
-          
-          <th>Title</th>
-          
-          <th>Date of Publishing</th>
-          
-          <th>Actions</th>
-        
-        </tr>
-        </thead>
-        <tbody>
-        <tr class="warning" *ngFor="let category of gcategories">
-          <td>{{category.categoryId}}</td>
-          
-          <td>
-              <div class="game-titles-container">
-                <a class="game-title" [routerLink]="['/', 'categories', 'details', category.categoryId]">{{category.name}}</a>
+</div>
 
-              </div>
-          </td>
-          <td>{{category.created | date }}</td>
-     
+
+
+
+<div class="mainContent">
+  <table class="table">
+    <thead>
+      <tr class="warning">
+        <th>ID</th>
+        <th>Name</th>
+        <th>Created</th>
+        <th>Last Updated</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="warning" *ngFor="let category of gcategories">
+        <td>{{category.categoryId}}</td>
+        <td>{{category.name}}</td>
+        <td>{{category.created | date}}</td>
+        <td>{{category.lastUpdated | date}}</td>
         <td>
-          <a class="btn btn-sm btn-outline-primary"
-             [routerLink]="['/', 'categories', 'edit', category.categoryId]">Edit</a>
-          </td>
-        </tr>
-        </tbody>
-      </table>
-   
-    </div>
-  
-    
-    
-    
+          <button class="btn btn-sm btn-outline-primary"
+                (click)="onEditClick(category.id)">Edit
+        </button>
+        <button class="btn btn-sm btn-outline-danger ml-2"
+                (click)="onDeleteClick(category)">Delete
+        </button>
+        </td>
+       
+      </tr>
+    </tbody>
+  </table>
+
+</div>

@@ -10,6 +10,10 @@ import { RouterModule, Routes } from '@angular/router';
 import { GamesModule } from './games/games.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ModalModule } from 'ngx-bootstrap/modal';
+import { ButtonsModule } from 'ngx-bootstrap/buttons';
+import { ToastrModule } from 'ngx-toastr';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 
 
 
@@ -23,11 +27,20 @@ import { ModalModule } from 'ngx-bootstrap/modal';
   imports: [
     BrowserModule,
     ModalModule.forRoot(),
+    ButtonsModule.forRoot(),
+
     AppRoutingModule,
     HttpClientModule,
     ModalModule,
-   // GamesModule,
+   GamesModule,
+   ToastrModule.forRoot(), // ToastrModule added
+   BrowserAnimationsModule, // required animations module
+   BsDatepickerModule.forRoot(),    
   
+
+   /*ToastrModule.forRoot({
+    positionClass: 'toast-top-center'
+  }),*/
    
   ],
   providers: [GamesServise],

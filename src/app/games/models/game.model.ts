@@ -11,7 +11,7 @@ export class Game {
         rating : number ;
         isOriginalityCertificateIncluded: boolean;
         posterImgUrl: string ;
-        publishAt?: Date ;
+        publishAt!: Date ;
         numberOfPlayers : string;
         timeOfAGameInMinutes : string;
 
@@ -20,7 +20,7 @@ export class Game {
     lastUpdated?: Date;
     created?: Date;
 
-    category!: Gcategory;
+    category?: Gcategory;
       
        // category: Category;
       
@@ -38,7 +38,7 @@ export class Game {
           this.numberOfPlayers = ''
           this.timeOfAGameInMinutes = ''
           this.typeOfGame = ''
-          this.category;
+          //this.category;
         }
       }
 

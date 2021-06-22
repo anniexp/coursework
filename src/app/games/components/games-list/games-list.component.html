@@ -53,7 +53,7 @@
      
         <td>{{game.rating }}</td>
         <td>{{game.publishAt | date }}</td>
-        <td>{{game.categoryId}}</td>
+        <td>{{game.category.name }}</td>
         <td>{{game.language}}</td>
         <td>{{game.price}}</td>
         <td>{{game.discount}}%</td>
@@ -81,16 +81,19 @@
  
   </div>
 
-  
+  <div *ngIf="listType === 'json'">
+    <pre>{{game | json}}</pre>
+  </div>
+
   <ng-template #deleteDialogTemplate>
     <div class="modal-header">
-      <h4 class="modal-title pull-left">Delete Course?</h4>
+      <h4 class="modal-title pull-left">Delete Game?</h4>
       <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
         <span aria-hidden="true">&times;</span>
       </button>
     </div>
     <div class="modal-body">
-      <p>Are you sure you want to delete course "{{selectedGame.title}}"?</p>
+      <p>Are you sure you want to delete game "{{selectedGame.name}}"?</p>
     </div>
     <div class="modal-footer">
       <button type="button" class="btn btn-default" (click)="modalRef.hide()">Cancel</button>

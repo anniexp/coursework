@@ -1,9 +1,10 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit, TemplateRef } from '@angular/core';
-import { BsModalRef } from 'ngx-bootstrap/modal';
+import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 import { take } from 'rxjs/operators';
 import { Game } from '../../models/game.model';
 import { GamesServise } from '../../services/games.services';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'lq-games-list',
@@ -14,13 +15,16 @@ export class GamesListComponent implements OnInit {
   games: Game[] = [];
   selectedGame!: Game;
   modalRef!: BsModalRef;
-  bsModalService: any;
+  listType = 'table';
+
 
   constructor(private gameService: GamesServise,
+    private bsModalService: BsModalService,
+    private toastrService: ToastrService
   ) {
 
     //this.games = this.gameService.getAll();
-    this.gameService.getAll().subscribe((response => {
+    this.gameService.getAll$().subscribe((response => {
 
       this.games = response;
     }))
@@ -33,7 +37,7 @@ export class GamesListComponent implements OnInit {
 
   }
   private getAlls(): void {
-    this.gameService.getAll().pipe(
+    this.gameService.getAll$().pipe(
       take(1)
     ).subscribe((response) => {
       this.games = response;
@@ -50,15 +54,17 @@ export class GamesListComponent implements OnInit {
       take(1)
     ).subscribe(() => {
       this.getAlls();
-      //this.toastrService.success('Course was successfully deleted.', 'Success');
+      this.toastrService.success('Game was successfully deleted.', 'Success');
       this.modalRef.hide();
     }, (response: HttpErrorResponse) => {
-    /*  this.toastrService.error(response.message, 'Error', {
+      this.toastrService.error(response.message, 'Error', {
         disableTimeOut: true,
         closeButton: true
-      });*/
+      });
     });
   }
 
+ 
 
 }
+

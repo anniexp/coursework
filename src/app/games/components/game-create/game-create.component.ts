@@ -4,6 +4,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { take } from 'rxjs/operators';
 import { Game } from '../../models/game.model';
 import { GamesServise } from '../../services/games.services';
+import { GcategoriesServise } from '../../../gcategories/services/gcategories.services';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'lq-game-create',
@@ -12,31 +14,37 @@ import { GamesServise } from '../../services/games.services';
 })
 export class GameCreateComponent implements OnInit {
 
-
   formGroup!: FormGroup;
-  id: number;
+  id!: number;
   game: Game = new Game;
-
-
-
-
+  categories!: import("c:/Users/Lenovo/Desktop/Angular coursework/coursework/src/app/gcategories/models/gcategory.model").Gcategory[];
   
+
 
   constructor(
    private gamesService: GamesServise,
+   private categoriesService: GcategoriesServise,
+   private toastrService: ToastrService,
               private router: Router,
               private route: ActivatedRoute,
               private fb: FormBuilder) {
-    const serializableState: string | any = this.route.snapshot.paramMap.get('id');
+    /*const serializableState: string | any = this.route.snapshot.paramMap.get('id');
     this.id = serializableState;
-    console.log(this.id)
+    console.log(this.id)*/
+
+
+    //assisstants solution
+    if(this.route.snapshot.paramMap.get('id'))
+    {
+      this.id = +this.route.snapshot.params.id;
+      console.log(this.id);
+      console.log(typeof this.id);
+    }
     //return serializableState !==null ||serializableState === undefined ? this.route.snapshot.paramMap.get('id'):undefined;
               
               }
     
-    
-          
-    
+   
 /*
   ngOnInit(): void {
     this.buildForm();
@@ -67,6 +75,12 @@ else
     } else {
       this.buildForm();
     }
+
+    this.categoriesService.getAll().pipe(
+      take(1)
+    ).subscribe((response) => {
+      this.categories = response;
+    });
     //this.buildForm();
   }
 
@@ -85,12 +99,12 @@ onSubmit(): void {
     ...this.formGroup.value
   };
 
-  delete body.lastUpdated;
+  delete body.category;
 
   this.gamesService.save$(body).pipe(
     take(1)
   ).subscribe(() => {
-    //this.toastrService.success('Course was successfully saved.', 'Success');
+    this.toastrService.success('Game was successfully saved.', 'Success');
     this.router.navigate(['games']);
   });
 }
@@ -102,6 +116,13 @@ game = new Game();
 
 }
 console.log(game);
+
+let publishAt;
+    if (game.publishAt) {
+      publishAt = new Date(game.publishAt);
+    } else {
+      publishAt = new Date();
+    }
 
 this.formGroup = this.fb.group({
         title:[ game.title, Validators.required ] ,   
@@ -116,6 +137,7 @@ this.formGroup = this.fb.group({
         //publishAt:  ,
         numberOfPlayers : game.numberOfPlayers,
         timeOfAGameInMinutes : game.timeOfAGameInMinutes,
+        publishAt: [game.publishAt, Validators.required],
 
         //is ir base, expansion or dlc
         typeOfGame : game.typeOfGame 

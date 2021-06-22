@@ -8,6 +8,9 @@ import { GameCreateComponent } from './components/game-create/game-create.compon
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { ModalModule } from "ngx-bootstrap/modal";
 import { ButtonsModule } from 'ngx-bootstrap/buttons';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
+
 
 
 
@@ -24,12 +27,15 @@ GamesRoutingModule,
 ReactiveFormsModule,
 FormsModule,
 ButtonsModule.forRoot(),
+BrowserAnimationsModule,
+BsDatepickerModule.forRoot(), 
 
     ],
     declarations:[
         GamesListComponent,
         GameDetailsComponent,
         GameCreateComponent
+
         
     ],
     exports:[
